@@ -1,0 +1,56 @@
+/* =========================================================
+   Chillarin UI Kit — tokens.css
+   ブランド: ミント単色アクセント / ダーク・ライト両対応
+   Source of truth: chillarin-blog/static/css/tokens.css
+   このファイルを vendor したら base.css より前に読み込むこと。
+   ========================================================= */
+
+:root {
+  /* === アクセント(両モード共通) === */
+  --accent-h:      175;
+  --accent:        oklch(0.82 0.14 175);
+  --accent-soft:   oklch(0.82 0.14 175 / .22);
+  --accent-line:   oklch(0.72 0.14 175 / .5);
+  --accent-glow:   oklch(0.82 0.14 175 / .5);
+  --accent-text:   var(--accent);
+  --warn:          oklch(0.76 0.15 45);
+
+  /* === ダークモード(デフォルト) === */
+  --accent-on:     #0b1116;
+  --bg:            #0b1116;
+  --bg-elev:       #111921;
+  --bg-card:       #131c25;
+  --border:        #1d2834;
+  --border-str:    #2b3a4c;
+  --text:          #e8ecf1;
+  --text-dim:      #b8c3cf;
+  --muted:         #8a96a6;
+  --scrim:         rgba(6, 10, 15, .85);
+
+  /* === タイポグラフィ === */
+  --font-serif:    "Noto Serif JP", serif;
+  --font-sans:     "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-mono:     "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* === Legacy aliases === */
+  --text-main:     var(--text);
+  --text-muted:    var(--muted);
+
+  font-feature-settings: "palt" 1;
+}
+
+/* === ライトモード === */
+:root.light {
+  --accent-on:     #0b1116;
+  --bg:            #f4f8fa;
+  --bg-elev:       #ffffff;
+  --bg-card:       #ffffff;
+  --border:        #e2ebf0;
+  --border-str:    #cbd8e0;
+  --text:          #0f1a22;
+  --text-dim:      #2a3642;
+  --muted:         #64707c;
+  --scrim:         rgba(244, 248, 250, .85);
+  --text-main:     var(--text);
+  --text-muted:    var(--muted);
+}

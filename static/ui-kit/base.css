@@ -1,0 +1,193 @@
+/* =========================================================
+   Chillarin UI Kit — base.css
+   tokens.css の変数を使った最小ベース。
+   tokens.css の後に読み込むこと。
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+:root.light { color-scheme: light; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 1.6em 0 0.7em;
+}
+h1 { font-size: 2rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3em; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+
+p { margin: 0 0 1em; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+a:hover { text-decoration: underline; }
+a:focus-visible {
+  outline: 2px solid var(--accent-line);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+small { color: var(--text-dim); }
+strong { color: var(--text); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+/* === Code === */
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+:not(pre) > code {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  color: var(--accent-text);
+}
+pre {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+pre code { background: transparent; border: 0; padding: 0; color: var(--text); }
+
+/* === Form controls === */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select, textarea {
+  background: var(--bg-elev);
+  border: 1px solid var(--border-str);
+  color: var(--text);
+  padding: 0.5em 0.75em;
+  border-radius: 6px;
+  transition: border-color .15s ease;
+}
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button:not(.mode-toggle) {
+  background: var(--accent);
+  color: var(--accent-on);
+  border: 0;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s ease;
+}
+button:not(.mode-toggle):hover { opacity: 0.85; }
+button:not(.mode-toggle):disabled { opacity: 0.5; cursor: not-allowed; }
+button:not(.mode-toggle).is-secondary {
+  background: var(--bg-elev);
+  color: var(--text);
+  border: 1px solid var(--border-str);
+}
+
+/* === Card / panel === */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25em;
+}
+
+/* === Table === */
+table { width: 100%; border-collapse: collapse; margin: 1em 0; }
+th, td {
+  padding: 0.6em 0.8em;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+th { color: var(--text-dim); font-weight: 600; background: var(--bg-elev); }
+tr:hover td { background: var(--bg-elev); }
+
+/* === Mode toggle button (dark/light pill) === */
+.mode-toggle {
+  flex: 0 0 auto;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border-str);
+  border-radius: 22px;
+  background: var(--bg-elev);
+  cursor: pointer;
+  transition: border-color .15s ease;
+}
+.mode-toggle:hover { border-color: var(--accent-line); }
+.mode-toggle:focus-visible {
+  outline: 2px solid var(--accent-line);
+  outline-offset: 2px;
+}
+.mode-toggle__track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 7px;
+}
+.mode-toggle__icon {
+  width: 14px;
+  height: 14px;
+  color: var(--muted);
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+}
+.mode-toggle__thumb {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow), 0 1px 2px rgba(0, 0, 0, .35);
+  transform: translate(30px, -50%);
+  transition: transform 280ms cubic-bezier(.5, 1.4, .55, 1);
+  pointer-events: none;
+}
+:root.light .mode-toggle__thumb { transform: translate(0, -50%); }
+
+/* === Container === */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }

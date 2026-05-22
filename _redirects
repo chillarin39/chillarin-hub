@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# 短縮リンクを Hub ドメイン経由で配ると、被リンク・流入ともに chillarin39.com 経由に集約されるため。
+# Google から見ると同一ドメイン内ナビゲーションだが、SNS でシェアした時のドメイン認知は強化される。
+
+/blog       https://chillablog.chillarin39.com/        302
+/podcast    https://podcast.chillarin39.com/           302
+/szta       https://szta.chillarin39.com/              302
+/members    https://members.chillarin39.com/           302
+/x          https://x.com/chillarin39                  302

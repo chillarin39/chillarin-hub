@@ -1,0 +1,32 @@
+<!--
+  Chillarin UI Kit — HTML <head> snippet
+  これを <head> の冒頭付近にコピー（FOUC防止IIFEは <link> より前）。
+  パスはプロジェクトの static ルートに合わせて適宜書き換えてOK。
+-->
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- FOUC 防止: <link> より前に置くこと -->
+<script>
+  (function(){
+    try {
+      var m = localStorage.getItem('chirarin.mode');
+      if (m === 'light') document.documentElement.classList.add('light');
+    } catch (e) {}
+  })();
+</script>
+
+<!-- フォント (任意。読み込まなくても system フォントにフォールバック) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+
+<!-- UI Kit（読み込み順を厳守: tokens → base → app） -->
+<link rel="stylesheet" href="/static/ui-kit/tokens.css">
+<link rel="stylesheet" href="/static/ui-kit/base.css">
+<!-- 各プロジェクト固有スタイルはこの後 -->
+<!-- <link rel="stylesheet" href="/static/app.css"> -->
+
+<!-- mode-toggle ボタンを使う場合 -->
+<script src="/static/ui-kit/mode-toggle.js" defer></script>

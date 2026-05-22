@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    (function(){
+      try {
+        var m = localStorage.getItem('chirarin.mode');
+        if (m === 'light') document.documentElement.classList.add('light');
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>chillarin — 自宅ラボとチンチラと暮らすエンジニア</title>
+  <meta name="description" content="ちらりん (chillarin) のポートフォリオハブ。チンチラのリンちゃんと暮らしながら、Proxmox 自宅ラボ・ブログ・ポッドキャスト・Simple ZTA Access などを運用しているエンジニアの発信拠点。" />
+  <link rel="canonical" href="https://chillarin39.com/" />
+
+  <meta property="og:title" content="chillarin — 自宅ラボとチンチラと暮らすエンジニア" />
+  <meta property="og:description" content="ちらりん (chillarin) のポートフォリオハブ。Proxmox 自宅ラボ・ブログ・ポッドキャスト・Simple ZTA Access の発信拠点。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chillarin39.com/" />
+  <meta property="og:image" content="https://chillarin39.com/static/images/og-image.png" />
+  <meta property="og:site_name" content="chillarin39.com" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@chillarin39" />
+  <meta name="twitter:title" content="chillarin — 自宅ラボとチンチラと暮らすエンジニア" />
+  <meta name="twitter:description" content="ちらりん (chillarin) のポートフォリオハブ。Proxmox 自宅ラボ・ブログ・ポッドキャスト・Simple ZTA Access の発信拠点。" />
+  <meta name="twitter:image" content="https://chillarin39.com/static/images/og-image.png" />
+
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Noto+Serif+JP:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="/static/ui-kit/tokens.css">
+  <link rel="stylesheet" href="/static/ui-kit/base.css">
+  <link rel="stylesheet" href="/static/app.css">
+
+  <script src="/static/ui-kit/mode-toggle.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ちらりん",
+    "alternateName": "chillarin",
+    "url": "https://chillarin39.com/",
+    "image": "https://chillarin39.com/static/images/hero-avatar.png",
+    "jobTitle": "ネットワークエンジニア / 自宅ラボ運用者",
+    "description": "Proxmox 自宅ラボとチンチラと暮らしながら、ブログ・ポッドキャスト・自作プロダクトを発信しているエンジニア。",
+    "sameAs": [
+      "https://x.com/chillarin39",
+      "https://chillablog.chillarin39.com/",
+      "https://podcast.chillarin39.com/",
+      "https://szta.chillarin39.com/"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "chillarin39.com",
+    "url": "https://chillarin39.com/",
+    "description": "ちらりん (chillarin) のポートフォリオハブ。",
+    "inLanguage": "ja-JP",
+    "publisher": {
+      "@type": "Person",
+      "name": "ちらりん",
+      "url": "https://chillarin39.com/"
+    }
+  }
+  </script>
+</head>
+<body class="page-hub">
+  <header class="hub-header">
+    <div class="hub-header__inner">
+      <a class="hub-brand" href="/">
+        <span class="hub-brand__mark" aria-hidden="true">🐭</span>
+        <span class="hub-brand__name">chillarin39.com</span>
+      </a>
+
+      <button type="button" class="mode-toggle" aria-label="カラーモード切替" aria-pressed="false">
+        <span class="mode-toggle__track">
+          <svg class="mode-toggle__icon mode-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="12" y1="2" x2="12" y2="5"/>
+              <line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="5" y2="12"/>
+              <line x1="19" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/>
+              <line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/>
+              <line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/>
+              <line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>
+            </g>
+          </svg>
+          <svg class="mode-toggle__icon mode-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 15A8 8 0 1 1 9 4a7 7 0 0 0 11 11z" fill="currentColor"/>
+          </svg>
+          <span class="mode-toggle__thumb" aria-hidden="true"></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main class="hub-main">
+    <section class="hub-hero">
+      <p class="hub-hero__kicker">PORTFOLIO HUB</p>
+      <h1 class="hub-hero__title">
+        ちらりん<span class="hub-hero__title-sub">chillarin</span>
+      </h1>
+      <p class="hub-hero__tagline">
+        チンチラのリンちゃんと暮らしながら、<br>
+        自宅ラボでブログ・ポッドキャスト・自作プロダクトを動かしているエンジニアです。
+      </p>
+    </section>
+
+    <section class="hub-section" aria-labelledby="what-i-do">
+      <h2 id="what-i-do" class="hub-section__title">やっていること</h2>
+      <ul class="hub-list">
+        <li class="hub-list__item">
+          <strong>自宅ラボ</strong>: NUC×3 で組んだ Proxmox クラスタを中心に、ブログ・観測基盤・AI 推論・自作サービスを動かしています。
+        </li>
+        <li class="hub-list__item">
+          <strong>ブログ運営</strong>: 自宅サーバ運用・ネットワーク・AI・スマートホームを実機検証ベースで発信しています。
+        </li>
+        <li class="hub-list__item">
+          <strong>ポッドキャスト</strong>: 日本紹介の英語ポッドキャストを 4 ch (Quiet Japan / Sleepy Japan History / Hidden Japan / Japan Event Radar) で運用しています。
+        </li>
+        <li class="hub-list__item">
+          <strong>自作プロダクト</strong>: Simple ZTA Access (gRPC + WebSocket SSH のゼロトラスト接続実験) や、ちょっとした便利ツールを公開しています。
+        </li>
+      </ul>
+    </section>
+
+    <section class="hub-section" aria-labelledby="where-i-publish">
+      <h2 id="where-i-publish" class="hub-section__title">どこで発信しているか</h2>
+      <div class="hub-cards">
+        <a class="hub-card" href="https://chillablog.chillarin39.com/" rel="me">
+          <span class="hub-card__label">BLOG</span>
+          <span class="hub-card__title">ちらりんブログ</span>
+          <span class="hub-card__desc">
+            自宅サーバ・ネットワーク・AI・スマートホームを実機検証で書き残すブログ。
+          </span>
+          <span class="hub-card__host">chillablog.chillarin39.com</span>
+        </a>
+
+        <a class="hub-card" href="https://podcast.chillarin39.com/" rel="me">
+          <span class="hub-card__label">PODCAST</span>
+          <span class="hub-card__title">Quiet Japan 4ch</span>
+          <span class="hub-card__desc">
+            日本の街・歴史・小ネタを英語で紹介する 4 つのチャンネル。
+          </span>
+          <span class="hub-card__host">podcast.chillarin39.com</span>
+        </a>
+
+        <a class="hub-card" href="https://szta.chillarin39.com/" rel="me">
+          <span class="hub-card__label">PRODUCT</span>
+          <span class="hub-card__title">Simple ZTA Access</span>
+          <span class="hub-card__desc">
+            gRPC + WebSocket SSH で動くゼロトラスト接続実験。自宅と外をつなぐ用途で運用中。
+          </span>
+          <span class="hub-card__host">szta.chillarin39.com</span>
+        </a>
+
+        <a class="hub-card" href="https://members.chillarin39.com/" rel="me">
+          <span class="hub-card__label">MEMBERS</span>
+          <span class="hub-card__title">メンバー限定コンテンツ</span>
+          <span class="hub-card__desc">
+            実運用設定一式・段階的構築手順・トラブル解決集を有料で公開しています。
+          </span>
+          <span class="hub-card__host">members.chillarin39.com</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="hub-section" aria-labelledby="sns">
+      <h2 id="sns" class="hub-section__title">SNS</h2>
+      <ul class="hub-sns">
+        <li>
+          <a href="https://x.com/chillarin39" rel="me">
+            <span class="hub-sns__mark">𝕏</span>
+            <span class="hub-sns__handle">@chillarin39</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="hub-footer">
+    <p class="hub-footer__copy">© <span id="hub-year">2026</span> chillarin. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('hub-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
