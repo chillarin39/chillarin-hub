@@ -1,0 +1,13 @@
+# Cloudflare Wrangler 関連 (Workers デプロイで自動生成されるが Pages 切り替え後は使わない)
+.wrangler/
+wrangler.jsonc
+node_modules/
+
+# OS / editor 関連
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Hub Page 自体は静的 HTML のみで動くので、build 出力ディレクトリは無し
