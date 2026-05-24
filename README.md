@@ -23,7 +23,7 @@ chillarin-hub/
 │   ├── app.css         # Hub 専用スタイル
 │   └── images/         # OGP / favicon / hero
 ├── _headers            # Cloudflare Pages: cache / CSP
-├── _redirects          # /blog /podcast /szta /members /x の短縮リダイレクト
+├── _redirects          # /blog /podcast /members /x の短縮リダイレクト
 └── README.md
 ```
 
