@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    (function(){
+      try {
+        var m = localStorage.getItem('chirarin.mode');
+        if (m === 'light') document.documentElement.classList.add('light');
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>404 — ページが見つかりません | chillarin39.com</title>
+  <meta name="description" content="お探しのページが見つかりませんでした。chillarin39.com のトップから目的のサブドメインへお進みください。" />
+  <meta name="robots" content="noindex,follow" />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap">
+
+  <link rel="stylesheet" href="/static/ui-kit/tokens.css">
+  <link rel="stylesheet" href="/static/ui-kit/base.css">
+  <link rel="stylesheet" href="/static/app.css">
+
+  <style>
+    .notfound {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+    .notfound-code {
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 700;
+      line-height: 1;
+      margin: 0 0 1rem;
+      color: var(--accent, #5b8ec5);
+    }
+    .notfound-title { font-size: 1.5rem; margin: 0 0 0.75rem; }
+    .notfound-text { color: var(--text-muted, #888); margin: 0 0 2rem; }
+    .notfound-links { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .notfound-links a {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--border, #444);
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s;
+    }
+    .notfound-links a:hover { border-color: var(--accent, #5b8ec5); }
+  </style>
+</head>
+<body>
+  <main class="notfound">
+    <p class="notfound-code">404</p>
+    <h1 class="notfound-title">ページが見つかりませんでした</h1>
+    <p class="notfound-text">URL が変更されたか、削除された可能性があります。</p>
+    <div class="notfound-links">
+      <a href="/">トップへ戻る</a>
+      <a href="https://chillablog.chillarin39.com/">ブログ</a>
+      <a href="https://podcast.chillarin39.com/">ポッドキャスト</a>
+    </div>
+  </main>
+</body>
+</html>
